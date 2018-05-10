@@ -5,19 +5,25 @@ Appliance.type = 'appliance';
 Appliance.hpModifier = -10;
 Appliance.attackModifier = 8;
 
-const microwave = Object.create(Appliance);
-microwave.model = 'microwave';
-microwave.dmgType = 'radiation';
-microwave.setHP(80, 120);
-microwave.setDmg(10, 30);
+const makeMicrowave = () => {
+  const microwave = Object.create(Appliance);
+  microwave.model = 'Microwave';
+  microwave.dmgType = 'radiation';
+  microwave.setHP(80, 120);
+  microwave.setDmg(10, 30);
+  return microwave;
+};
 
-const blender = Object.create(Appliance);
-blender.model = 'blender';
-blender.dmgType = 'blending';
-blender.setHP(70, 100);
-blender.setDmg(40, 25);
+const makeBlender = () => {
+  const blender = Object.create(Appliance);
+  blender.model = 'Blender';
+  blender.dmgType = 'blending';
+  blender.setHP(70, 100);
+  blender.setDmg(40, 25);
+  return blender;
+};
 
 module.exports = {
-  microwave,
-  blender,
+  makeMicrowave,
+  makeBlender,
 };
