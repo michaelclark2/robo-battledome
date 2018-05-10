@@ -22,7 +22,7 @@ const chooseFighters = (e) => {
 
     dom.printPlayers(data.getPlayers());
 
-    $(e.target).hide();
+    $('#start, #choose-fighters').hide();
   }
 };
 module.exports = {
