@@ -28,6 +28,7 @@ const printPlayers = (playersArray) => {
     </div>`;
   }).join('');
   $('#arena').html(domString);
+  $('#attack').removeClass('hide');
 };
 module.exports = {
   printOptions,

@@ -9,7 +9,7 @@ const makeMicrowave = () => {
   const microwave = Object.create(Appliance);
   microwave.model = 'Microwave';
   microwave.dmgType = 'radiation';
-  microwave.setHP(80, 120);
+  microwave.setHP(180, 120);
   microwave.setDmg(10, 30);
   return microwave;
 };
@@ -18,7 +18,7 @@ const makeBlender = () => {
   const blender = Object.create(Appliance);
   blender.model = 'Blender';
   blender.dmgType = 'blending';
-  blender.setHP(70, 100);
+  blender.setHP(170, 100);
   blender.setDmg(40, 25);
   return blender;
 };

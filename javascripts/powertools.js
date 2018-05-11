@@ -9,7 +9,7 @@ const makeDrill = () => {
   const drill = Object.create(Powertool);
   drill.model = 'Drill';
   drill.dmgType = 'drilling';
-  drill.setHP(40, 50);
+  drill.setHP(90, 50);
   drill.setDmg(50, 60);
   return drill;
 };
@@ -18,7 +18,7 @@ const makeJigsaw = () => {
   const jigsaw = Object.create(Powertool);
   jigsaw.model = 'Jigsaw';
   jigsaw.dmgType = 'laceration';
-  jigsaw.setHP(30, 50);
+  jigsaw.setHP(130, 50);
   jigsaw.setDmg(60, 70);
   return jigsaw;
 };
