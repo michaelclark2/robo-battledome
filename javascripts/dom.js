@@ -1,4 +1,5 @@
 const data = require('./data');
+const weapons = require('./weapons');
 
 const printOptions = () => {
   const robotStrings = data.allRobotBuilders.map(robot => {
@@ -6,6 +7,14 @@ const printOptions = () => {
   });
   robotStrings.forEach(robot => {
     $('.robot-select').append(`<option>${robot}</option>`);
+  });
+};
+const printStartWeapons = () => {
+  weapons().then(wep => {
+    console.log(wep);
+    for (let i = 0; i < 3; i++) {
+      $('#weapon-select').append(`<option value="${wep[i].id}">${wep[i].name}</option>`);
+    }
   });
 };
 const printPlayers = (playersArray) => {
@@ -33,4 +42,5 @@ const printPlayers = (playersArray) => {
 module.exports = {
   printOptions,
   printPlayers,
+  printStartWeapons,
 };

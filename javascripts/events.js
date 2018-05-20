@@ -1,10 +1,16 @@
 const data = require('./data');
 const dom = require('./dom');
+const Player = require('./player');
+const weapons = require('./weapons');
 
 const addStartEvent = () => {
   $('#start').click(chooseFighters);
 };
 const chooseFighters = (e) => {
+  weapons().then(weps => {
+    Player.weapon = weps.find(wep => $('#weapon-select').val() === wep.id);
+    console.log(Player);
+  });
   const robot1Name = $('#player1').val();
   const robot1Index = $('#robot1').prop('selectedIndex');
 
