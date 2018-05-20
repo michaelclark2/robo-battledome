@@ -1,0 +1,58 @@
+{
+  "weapons": [
+    {
+      "id": "wep0",
+      "name": "bare hands",
+      "att": {
+        "min": 5,
+        "max": 8
+      },
+      "critChance": 2
+    },
+    {
+      "id": "wep1",
+      "name": "flip flop",
+      "att": {
+        "min": 4,
+        "max": 10
+      },
+      "critChance": 2
+    },
+    {
+      "id": "wep2",
+      "name": "slingshot",
+      "att": {
+        "min": 3,
+        "max": 6
+      },
+      "critChance": 4
+    },
+    {
+      "id": "wep3",
+      "name": "baseball bat",
+      "att": {
+        "min": 8,
+        "max": 14
+      },
+      "critChance": 1
+    },
+    {
+      "id": "wep4",
+      "name": "crowbar",
+      "att": {
+        "min": 7,
+        "max": 12
+      },
+      "critChance": 2
+    },
+    {
+      "id": "wep5",
+      "name": "",
+      "att": {
+        "min": 5,
+        "max": 8
+      },
+      "critChance": 2
+    }
+  ]
+}
