@@ -3,6 +3,7 @@ const dom = require('./dom');
 const Player = require('./player');
 const Game = require('./Game');
 const weapons = require('./weapons');
+const bosses = require('./boss');
 
 const addStartEvent = () => {
   $('#start').click(startGame);
@@ -15,6 +16,7 @@ const startGame = (e) => {
       Player.name = playerName;
       Game.player = Player;
       Game.mobs = data.createMobs();
+      Game.boss = bosses[Math.floor(Math.random() * bosses.length)]();
       Player.opponent = Game.mobs[Math.floor(Math.random() * Game.mobs.length)];
       $('#choose-player').hide();
       dom.printPlayer(Player);
