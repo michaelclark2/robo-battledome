@@ -24,40 +24,25 @@
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
   <h1 class="text-center">Household Appliance Fight Club</h1>
-  <h5 class="text-center">Your smart home became too smart and started its own Fight Club!</h5>
-  <h5 class="text-center">Pit your appliances against each other and watch them fight to the death!</h5>
+  <h5 class="text-center">Your smart home has become too smart and has turned all of your appliances against you!</h5>
+  <h5 class="text-center">Defeat all of your appliances and prepare to face the final boss!</h5>
   <div class="container">
     <div id="choose-player" class="row">
-      <div class="col-md-6 col-md-offset-4">
+      <div class="col-md-6 col-md-offset-3 text-center">
         <h1>Create new player</h1>
-        <input type="text" id="player-name" placeholder="Name...">
+        <input type="text" id="player-name" placeholder="Name..."><br>
+        <h5>Choose your starting weapon</h5>
         <select id="weapon-select">
-        </select>
+        </select><br>
+        <button class="btn btn-danger" id="start">Start Fight!</button>
       </div>
     </div>
-    <div id='choose-fighters' class="row">
-      <div class="col-md-6 text-center">
-        <h1>Robot 1</h1>
-        <input type="text" id="player1" placeholder="Name...">
-        <br><br>
-        <select class="robot-select" id="robot1">
-          <option>Choose your fighter: </option>
-        </select>
+    <div class="row" id="arena">
+      <div class="col-md-4" id="player">
       </div>
-      <div class="col-md-6 text-center">
-        <h1>Robot 2</h1>
-        <input type="text" id="player2" placeholder="Name...">
-        <br><br>
-        <select class="robot-select" id="robot2">
-          <option>Choose your fighter: </option>
-        </select>
+      <div class="col-md-8" id="opponent">
       </div>
     </div>
-    <div class="row text-center user-buttons">
-      <button class="btn btn-danger" id="start">Start Fight!</button>
-      <button class="btn btn-danger hide" id="attack">Attack!</button>
-    </div>
-    <div class="row" id="arena"></div>
   </div>
   <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
