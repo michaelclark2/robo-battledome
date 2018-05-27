@@ -2,7 +2,7 @@
   "weapons": [
     {
       "id": "wep0",
-      "name": "bare hands",
+      "name": "Bare hands",
       "att": {
         "min": 5,
         "max": 8
@@ -11,7 +11,7 @@
     },
     {
       "id": "wep1",
-      "name": "flip flop",
+      "name": "Flip-flop",
       "att": {
         "min": 4,
         "max": 10
@@ -20,7 +20,7 @@
     },
     {
       "id": "wep2",
-      "name": "slingshot",
+      "name": "Slingshot",
       "att": {
         "min": 3,
         "max": 6
@@ -29,7 +29,7 @@
     },
     {
       "id": "wep3",
-      "name": "baseball bat",
+      "name": "Baseball bat",
       "att": {
         "min": 8,
         "max": 14
@@ -38,7 +38,7 @@
     },
     {
       "id": "wep4",
-      "name": "crowbar",
+      "name": "Crowbar",
       "att": {
         "min": 7,
         "max": 12
@@ -47,12 +47,21 @@
     },
     {
       "id": "wep5",
-      "name": "",
+      "name": "Kitchen knife",
       "att": {
-        "min": 5,
-        "max": 8
+        "min": 7,
+        "max": 10
       },
-      "critChance": 2
+      "critChance": 3
+    },
+    {
+      "id": "wep6",
+      "name": "Sledgehammer",
+      "att": {
+        "min": 9,
+        "max": 15
+      },
+      "critChance": 1
     }
   ]
 }
