@@ -14,7 +14,9 @@ const startGame = (e) => {
       Player.weapon = weps.find(wep => $('#weapon-select').val() === wep.id);
       Player.name = playerName;
       Game.player = Player;
-      Player.opponent = data.allRobotBuilders[Math.floor(Math.random() * data.allRobotBuilders.length)]();
+      Game.mobs = data.createMobs();
+      Player.opponent = Game.mobs[Math.floor(Math.random() * Game.mobs.length)];
+      $('#choose-player').hide();
       dom.printPlayer(Player);
       dom.printOpponent(Player.opponent);
       addAttackEvent();

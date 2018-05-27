@@ -10,10 +10,16 @@ const makeBuilderArray = (typeGroup) => {
     allRobotBuilders.push(botBuilder);
   }
 };
+const createMobs = () => {
+  return allRobotBuilders.map(robot => {
+    return robot();
+  });
+};
 makeBuilderArray(Appliances);
 makeBuilderArray(Computers);
 makeBuilderArray(Powertools);
 
 module.exports = {
   allRobotBuilders,
+  createMobs,
 };
