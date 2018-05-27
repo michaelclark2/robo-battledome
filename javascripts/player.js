@@ -1,11 +1,10 @@
 const Player = {
   hp: 100,
-  critX: 1.25,
   weapon: {},
   opponent: {},
   attack: function () {
     if (this.weapon.critChance > randomNum(1, 10)) {
-      return randomNum(this.weapon.att.min, this.weapon.att.max) * this.critX;
+      return randomNum(this.weapon.att.min, this.weapon.att.max) * 2;
     }
     else {
       return randomNum(this.weapon.att.min, this.weapon.att.max);
