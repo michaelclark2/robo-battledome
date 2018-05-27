@@ -1,6 +1,17 @@
 #arena {
   margin-top: 2em;
+  height: 600px;
 }
-.user-buttons {
+#user-btns {
+  position: absolute;
+  bottom: 1em;
+}
+#player,
+#opponent,
+.player,
+.opponent {
+  height: 100%;
+}
+#start {
   margin: 1em;
 }

@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint-plugin-promise": "^3.8.0",
     "grunt": "^1.0.2",
     "grunt-browserify": "^5.3.0",
     "grunt-contrib-watch": "^1.0.1",

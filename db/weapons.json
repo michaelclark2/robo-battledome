@@ -1,0 +1,67 @@
+{
+  "weapons": [
+    {
+      "id": "wep0",
+      "name": "Bare hands",
+      "att": {
+        "min": 5,
+        "max": 8
+      },
+      "critChance": 2
+    },
+    {
+      "id": "wep1",
+      "name": "Flip-flop",
+      "att": {
+        "min": 4,
+        "max": 10
+      },
+      "critChance": 2
+    },
+    {
+      "id": "wep2",
+      "name": "Slingshot",
+      "att": {
+        "min": 3,
+        "max": 6
+      },
+      "critChance": 4
+    },
+    {
+      "id": "wep3",
+      "name": "Baseball bat",
+      "att": {
+        "min": 8,
+        "max": 14
+      },
+      "critChance": 1
+    },
+    {
+      "id": "wep4",
+      "name": "Crowbar",
+      "att": {
+        "min": 7,
+        "max": 12
+      },
+      "critChance": 2
+    },
+    {
+      "id": "wep5",
+      "name": "Kitchen knife",
+      "att": {
+        "min": 7,
+        "max": 10
+      },
+      "critChance": 3
+    },
+    {
+      "id": "wep6",
+      "name": "Sledgehammer",
+      "att": {
+        "min": 9,
+        "max": 15
+      },
+      "critChance": 1
+    }
+  ]
+}
