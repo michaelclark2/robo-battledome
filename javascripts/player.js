@@ -1,5 +1,6 @@
 const Player = {
-  hp: 100,
+  maxHP: 200,
+  hp: this.maxHP,
   weapon: {},
   opponent: {},
   attack: function () {

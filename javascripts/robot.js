@@ -13,6 +13,7 @@ const Robot = {
     const min = Math.min(val1, val2);
     this.hp = Math.floor(Math.random() * (max - min)) + min;
     this.hp += this.hpModifier;
+    this.maxHP = this.hp;
   },
   setDmg: function (val1, val2) {
     const max = Math.max(val1, val2);
