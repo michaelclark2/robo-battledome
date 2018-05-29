@@ -5,6 +5,8 @@ const Game = require('./Game');
 const weapons = require('./weapons');
 const bosses = require('./boss');
 
+// const turn = 0;
+
 const addStartEvent = () => {
   $('#start').click(startGame);
 };
@@ -19,8 +21,7 @@ const startGame = (e) => {
       Game.boss = bosses[Math.floor(Math.random() * bosses.length)]();
       Player.opponent = Game.mobs[Math.floor(Math.random() * Game.mobs.length)];
       $('#choose-player').hide();
-      dom.printPlayer(Player);
-      dom.printOpponent(Player.opponent);
+      dom.drawScreen(Player, Player.opponent);
       addAttackEvent();
     }).catch(err => {
       console.error('Error loading weapons', err);
@@ -31,35 +32,18 @@ const addAttackEvent = () => {
   $('#attack').click(attack);
 };
 const attack = (e) => {
-  const players = data.getPlayers();
-  players[1].hp -= players[0].attack();
-  players[0].hp -= players[1].attack();
-  $('#hpPlayer1').width(`${Math.ceil((players[0].hp / players[0].maxHP) * 100)}%`);
-  $('#hpPlayer2').width(`${Math.ceil((players[1].hp / players[1].maxHP) * 100)}%`);
-  if (players[0].hp <= 0 && players[1].hp <= 0) {
-    $('#killscreen').modal('show');
-    $('#killscreen .modal-title').text('Draw');
-    $('#killscreen .modal-body').html('<p>There were no survivors...</p>');
-    resetBtn();
-  }
-  else if (players[0].hp <= 0) {
-    $('#killscreen').modal('show');
-    $('#killscreen .modal-title').text(`${players[1].name} is the victor!`);
-    $('#killscreen .modal-body').html(`<p>${players[1].model} ${players[1].type} ${players[1].name} has defeated ${players[0].model} ${players[0].type} ${players[0].name} by ${players[1].dmgType}.</p>`);
-    resetBtn();
-  }
-  else if (players[1].hp <= 0) {
-    $('#killscreen').modal('show');
-    $('#killscreen .modal-title').text(`${players[0].name} is the victor!`);
-    $('#killscreen .modal-body').html(`<p>${players[0].model} ${players[0].type} ${players[0].name} has defeated ${players[1].model} ${players[1].type} ${players[1].name} by ${players[0].dmgType}.</p>`);
-    resetBtn();
-  }
-
-};
-const resetBtn = () => {
-  $('#reset').click(e => {
-    location.reload();
-  });
+  Player.opponent.hp -= Player.attack();
+  dom.updateHP(Player, Player.opponent);
+  setTimeout(() => {
+    Player.hp -= Player.opponent.attack();
+    dom.updateHP(Player, Player.opponent);
+    if (Player.opponent.hp <= 0) {
+      $('#ticker').html('you win!');
+    }
+    else if (Player.hp <= 0) {
+      $('#ticker').html('you lose');
+    }
+  }, 1000);
 };
 
 module.exports = {
