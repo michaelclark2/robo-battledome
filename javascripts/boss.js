@@ -31,6 +31,9 @@ const makeApple = () => {
   return Apple;
 };
 
-const bossBuilderArray = [makeGoogle, makeAmazon, makeApple,];
+const randomBoss = () => {
+  const bossBuilderArray = [makeGoogle, makeAmazon, makeApple,];
+  return bossBuilderArray[Math.floor(Math.random() * bossBuilderArray.length)]();
+};
 
-module.exports = bossBuilderArray;
+module.exports = randomBoss;

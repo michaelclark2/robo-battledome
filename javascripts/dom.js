@@ -50,9 +50,9 @@ const printOpponent = (opponent) => {
   $('#opponent').html(domString);
 
 };
-const drawScreen = (player, opponent) => {
+const drawScreen = (player) => {
   printPlayer(player);
-  printOpponent(opponent);
+  printOpponent(player.opponent);
 };
 const updateHP = (player, opponent) => {
   $('#playerHP').width(`${Math.ceil((player.hp / player.maxHP) * 100)}%`);
