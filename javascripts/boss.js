@@ -36,4 +36,6 @@ const randomBoss = () => {
   return bossBuilderArray[Math.floor(Math.random() * bossBuilderArray.length)]();
 };
 
-module.exports = randomBoss;
+module.exports = {
+  randomBoss,
+};
