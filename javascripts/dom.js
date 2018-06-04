@@ -2,6 +2,7 @@ const weapons = require('./weapons');
 
 const printStartWeapons = () => {
   weapons().then(wep => {
+    $('#weapon-select').append(`<option value='wep6'>Sledgehammer</option>`);
     for (let i = 0; i < 3; i++) {
       $('#weapon-select').append(`<option value="${wep[i].id}">${wep[i].name}</option>`);
     }
@@ -50,13 +51,13 @@ const printOpponent = (opponent) => {
   $('#opponent').html(domString);
 
 };
-const drawScreen = (player) => {
-  printPlayer(player);
-  printOpponent(player.opponent);
+const drawScreen = (game) => {
+  printPlayer(game.player);
+  printOpponent(game.player.opponent);
 };
-const updateHP = (player, opponent) => {
-  $('#playerHP').width(`${Math.ceil((player.hp / player.maxHP) * 100)}%`);
-  $('#opponentHP').width(`${Math.ceil((opponent.hp / opponent.maxHP) * 100)}%`);
+const updateHP = (game) => {
+  $('#playerHP').width(`${Math.ceil((game.player.hp / game.player.maxHP) * 100)}%`);
+  $('#opponentHP').width(`${Math.ceil((game.player.opponent.hp / game.player.opponent.maxHP) * 100)}%`);
 };
 module.exports = {
   drawScreen,
