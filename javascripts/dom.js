@@ -48,10 +48,18 @@ const printOpponent = (opponent) => {
   </div>
 </div>`;
   $('#opponent').html(domString);
-};
 
+};
+const drawScreen = (player) => {
+  printPlayer(player);
+  printOpponent(player.opponent);
+};
+const updateHP = (player, opponent) => {
+  $('#playerHP').width(`${Math.ceil((player.hp / player.maxHP) * 100)}%`);
+  $('#opponentHP').width(`${Math.ceil((opponent.hp / opponent.maxHP) * 100)}%`);
+};
 module.exports = {
-  printPlayer,
-  printOpponent,
+  drawScreen,
+  updateHP,
   printStartWeapons,
 };

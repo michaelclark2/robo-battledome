@@ -10,7 +10,7 @@ const makeWindows = () => {
   windows.model = 'Windows';
   windows.dmgType = 'computer virus';
   windows.setHP(160, 80);
-  windows.setDmg(30, 40);
+  windows.setDmg(30, 18);
   return windows;
 };
 
