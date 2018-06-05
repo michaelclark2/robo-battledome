@@ -34,12 +34,13 @@ const addAttackEvent = () => {
     const playerDmg = game.player.attack();
     game.player.opponent.hp -= playerDmg;
     dom.updateHP(game);
-    $('#ticker').append(`<p>${game.player.name} attacks ${game.player.opponent.model} ${game.player.opponent.type} with ${game.player.weapon.name} for ${playerDmg} damage.</p>`);
-    $('#ticker :first-child').hide('slowest', function () { this.remove(); });
+    dom.updateTicker(`${game.player.name} attacks ${game.player.opponent.model} ${game.player.opponent.type} with ${game.player.weapon.name} for ${playerDmg} damage.`);
     setTimeout(() => {
       $(e.target).prop('disabled', false);
-      game.player.hp -= game.player.opponent.attack();
+      const opponentDmg = game.player.opponent.attack();
+      game.player.hp -= opponentDmg;
       dom.updateHP(game);
+      dom.updateTicker(`${game.player.opponent.model} ${game.player.opponent.type} attacks ${game.player.name} for ${opponentDmg} damage.`);
       if (game.player.opponent.hp <= 0) {
         game.player.hp = game.player.maxHP;
         data.onMobDeath(game);

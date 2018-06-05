@@ -62,9 +62,16 @@ const updateHP = (game) => {
   $('#playerHP').width(`${Math.ceil((game.player.hp / game.player.maxHP) * 100)}%`);
   $('#opponentHP').width(`${Math.ceil((game.player.opponent.hp / game.player.opponent.maxHP) * 100)}%`);
 };
+const updateTicker = (msg) => {
+  $('#ticker').prepend(`<p>${msg}</p>`);
+  if ($('#ticker').children().length > 6) {
+    $('#ticker p').last().fadeOut('slowest', function () { this.remove(); });
+  }
+};
 module.exports = {
   drawScreen,
   drawWeaponDrop,
+  updateTicker,
   updateHP,
   printStartWeapons,
 };
