@@ -25,7 +25,6 @@ const onMobDeath = (game) => {
   }
 };
 const gameOver = (game) => {
-  $('#user-btns').addClass('disabled');
   $('#user-btns').children().prop('disabled', 'disabled');
   if (game.boss.hp > 0) {
     $('#killscreen').modal('show');
@@ -69,19 +68,20 @@ const weaponDrop = (game) => {
   }).catch();
 
 };
-const allRobotBuilders = [];
-
 const makeBuilderArray = (typeGroup) => {
-  for (const robot in typeGroup) {
-    const botBuilder = typeGroup[robot];
-    allRobotBuilders.push(botBuilder);
-  }
+
 };
 const createMobs = () => {
+  const allConstructors = [];
   makeBuilderArray(Appliances);
   makeBuilderArray(Computers);
   makeBuilderArray(Powertools);
-  return allRobotBuilders.map(robot => {
+  [Appliances, Computers, Powertools,].forEach(type => {
+    for (const robot in type) {
+      allConstructors.push(type[robot]);
+    }
+  });
+  return allConstructors.map(robot => {
     return robot();
   });
 };

@@ -19,7 +19,10 @@ const startGame = (e) => {
       game.player.opponent = game.mobs[data.randomNum(game.mobs.length)];
       $('#choose-player').hide();
       $('#arena').removeClass('hide');
-      $('#user-btns').removeClass('hide');
+      $('#user-btns').removeClass('hide')
+        .children().prop('disabled', false);
+      $('#ticker').empty();
+
       data.setGame(game);
       dom.drawScreen(game);
     }).catch(err => {
