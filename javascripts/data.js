@@ -20,6 +20,10 @@ const onMobDeath = (game) => {
     newOpponent(game);
   }
 };
+const gameOver = (game) => {
+  $('#killscreen').modal('show');
+  $('#killscreen').find('.modal-body').html(`<p>${game.player.opponent.model + ' ' + game.player.opponent.type} defeated ${game.player.name} by ${game.player.opponent.dmgType}!</p>`);
+};
 const newOpponent = (game) => {
   const newOpponent = game.mobs[randomNum(game.mobs.length - 1)];
   game.player.opponent = newOpponent;
@@ -69,6 +73,7 @@ module.exports = {
   createMobs,
   setGame,
   getGame,
+  gameOver,
   onMobDeath,
   randomNum,
 };

@@ -2,7 +2,6 @@ const weapons = require('./weapons');
 
 const printStartWeapons = () => {
   weapons().then(wep => {
-    $('#weapon-select').append(`<option value='wep6'>Sledgehammer</option>`);
     for (let i = 0; i < 3; i++) {
       $('#weapon-select').append(`<option value="${wep[i].id}">${wep[i].name}</option>`);
     }
