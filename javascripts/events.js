@@ -18,6 +18,8 @@ const startGame = (e) => {
       const game = new Game(player, data.createMobs(), boss.randomBoss());
       game.player.opponent = game.mobs[Math.floor(Math.random() * game.mobs.length)];
       $('#choose-player').hide();
+      $('#player').closest('.playerCard').removeClass('hide');
+      $('#user-btns').removeClass('hide');
       data.setGame(game);
       dom.drawScreen(game);
       addAttackEvent();
