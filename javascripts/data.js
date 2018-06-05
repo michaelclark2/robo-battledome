@@ -68,14 +68,8 @@ const weaponDrop = (game) => {
   }).catch();
 
 };
-const makeBuilderArray = (typeGroup) => {
-
-};
 const createMobs = () => {
   const allConstructors = [];
-  makeBuilderArray(Appliances);
-  makeBuilderArray(Computers);
-  makeBuilderArray(Powertools);
   [Appliances, Computers, Powertools,].forEach(type => {
     for (const robot in type) {
       allConstructors.push(type[robot]);
