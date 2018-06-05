@@ -13,21 +13,42 @@ const getGame = () => {
   return game;
 };
 const onMobDeath = (game) => {
+  $('#heal').prop('disabled', false);
   game.mobs = game.mobs.filter(mob => mob.hp > 0);
-  if (randomNum(10) >= 4) {
+  if (game.boss.hp <= 0) {
+    gameOver(game);
+  }
+  else if (randomNum(10) >= 4) {
     weaponDrop(game);
   } else {
     newOpponent(game);
   }
 };
 const gameOver = (game) => {
-  $('#killscreen').modal('show');
-  $('#killscreen').find('.modal-body').html(`<p>${game.player.opponent.model + ' ' + game.player.opponent.type} defeated ${game.player.name} by ${game.player.opponent.dmgType}!</p>`);
+  $('#user-btns').addClass('disabled');
+  $('#user-btns').children().prop('disabled', 'disabled');
+  if (game.boss.hp > 0) {
+    $('#killscreen').modal('show');
+    $('#killscreen').find('.modal-body').html(`<p>${game.player.opponent.model + ' ' + game.player.opponent.type} defeated ${game.player.name} by ${game.player.opponent.dmgType}!</p>`);
+  }
+  else if (game.boss.hp <= 0) {
+    $('#killscreen').modal('show');
+    $('#killscreen').find('.modal-title').text('YOU WIN!');
+    $('#killscreen').find('.modal-body').html(`<p>${game.player.opponent.model + ' ' + game.player.opponent.type} has been defeated by ${game.player.name} using a ${game.player.weapon.name}!</p>`);
+  }
 };
 const newOpponent = (game) => {
-  const newOpponent = game.mobs[randomNum(game.mobs.length - 1)];
-  game.player.opponent = newOpponent;
-  setGame(game);
+  const newOpponent = game.mobs[randomNum(game.mobs.length)];
+  if (!newOpponent) {
+    game.player.opponent = game.boss;
+    setGame(game);
+    dom.drawScreen(game);
+  }
+  else {
+    game.player.opponent = newOpponent;
+    setGame(game);
+    dom.drawScreen(game);
+  }
 };
 const weaponDrop = (game) => {
   const mobDrops = game.player.opponent.drops;
@@ -40,12 +61,10 @@ const weaponDrop = (game) => {
       $('#attack').prop('disabled', false);
       game.player.weapon = weaponDropped;
       newOpponent(game);
-      dom.drawScreen(game);
     });
     $('.no').click(e => {
       $('#attack').prop('disabled', false);
       newOpponent(game);
-      dom.drawScreen(game);
     });
   }).catch();
 

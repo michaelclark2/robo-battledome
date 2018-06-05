@@ -11,12 +11,12 @@ const printStartWeapons = () => {
 };
 const printPlayer = (player) => {
   const domString =
-    `<div><h1 class="text-center">${player.name}</h1>
+    `<h1 class="text-center">${player.name}</h1>
     <div class="progress">
       <div id='playerHP' class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
       </div>
     </div>
-    <h4>${player.weapon.name} : ${player.weapon.att.min} - ${player.weapon.att.max}</h4></div>`;
+    <h4>${player.weapon.name} : ${player.weapon.att.min} - ${player.weapon.att.max}</h4>`;
   $('#player').html(domString);
 };
 const printOpponent = (opponent) => {
@@ -63,9 +63,16 @@ const updateHP = (game) => {
   $('#opponentHP').width(`${Math.ceil((game.player.opponent.hp / game.player.opponent.maxHP) * 100)}%`);
 };
 const updateTicker = (msg) => {
-  $('#ticker').prepend(`<p>${msg}</p>`);
+  if (msg) {
+    $('#ticker').prepend(`<p>${msg}</p>`);
+  }
+  else {
+    while ($('#ticker').children().length > 6) {
+      $('#ticker p').last().remove();
+    }
+  }
   if ($('#ticker').children().length > 6) {
-    $('#ticker p').last().fadeOut('slowest', function () { this.remove(); });
+    $('#ticker p').last().fadeOut(300, function () { this.remove(); });
   }
 };
 module.exports = {

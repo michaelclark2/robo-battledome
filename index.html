@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
-  <div id="killscreen" class="modal fade text-center" tabindex="-1" role="dialog">
+  <div id="killscreen" class="modal fade text-center" tabindex="-1" role="dialog" data-backdrop="static">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -37,8 +37,8 @@
         <button class="btn btn-danger" id="start">Start Fight!</button>
       </div>
     </div>
-    <div class="row" id="arena">
-      <div class="col-md-4 player playerCard hide">
+    <div class="row hide" id="arena">
+      <div class="col-md-4 player">
         <div class="col-md-12 player">
           <div class="panel panel-default player">
             <div class="panel-body">
@@ -47,6 +47,7 @@
               </div>
               <div class="hide" id="user-btns">
                 <button id="attack" class="btn btn-danger">Attack</button>
+                <button id="heal" class="btn btn-success">Heal</button>
               </div>
             </div>
           </div>

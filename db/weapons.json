@@ -22,8 +22,8 @@
       "id": "wep2",
       "name": "Slingshot",
       "att": {
-        "min": 3,
-        "max": 6
+        "min": 5,
+        "max": 8
       },
       "critChance": 4
     },
@@ -34,14 +34,14 @@
         "min": 8,
         "max": 14
       },
-      "critChance": 1
+      "critChance": 3
     },
     {
       "id": "wep4",
       "name": "Crowbar",
       "att": {
-        "min": 7,
-        "max": 12
+        "min": 8,
+        "max": 16
       },
       "critChance": 2
     },
@@ -58,8 +58,8 @@
       "id": "wep6",
       "name": "Sledgehammer",
       "att": {
-        "min": 9,
-        "max": 15
+        "min": 10,
+        "max": 17
       },
       "critChance": 1
     }
