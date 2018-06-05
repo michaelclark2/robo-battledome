@@ -12,7 +12,11 @@ function Player () {
         return data.randomNum(this.weapon.att.min, this.weapon.att.max);
       }
     },
+    heal: function () {
+      this.hp = this.maxHP;
+    },
   };
+
 };
 
 module.exports = Player;

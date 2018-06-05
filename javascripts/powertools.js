@@ -20,8 +20,8 @@ const makeJigsaw = () => {
   jigsaw.model = 'Jigsaw';
   jigsaw.dmgType = 'laceration';
   jigsaw.drops = ['wep4', 'wep6', 'wep3',];
-  jigsaw.setHP(130, 50);
-  jigsaw.setDmg(60, 70);
+  jigsaw.setHP(100, 50);
+  jigsaw.setDmg(40, 70);
   return jigsaw;
 };
 

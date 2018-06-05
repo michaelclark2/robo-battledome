@@ -6,8 +6,9 @@ const makeGoogle = () => {
   Assistant.model = 'Google';
   Assistant.hpModifier = 20;
   Assistant.attackModifier = 15;
-  Assistant.setHP(175, 250);
-  Assistant.setDmg(50, 75);
+  Assistant.dmgType = 'military conquest';
+  Assistant.setHP(150, 175);
+  Assistant.setDmg(40, 60);
   return Assistant;
 };
 const makeAmazon = () => {
@@ -15,9 +16,10 @@ const makeAmazon = () => {
   Amazon.type = 'Alexa';
   Amazon.model = 'Amazon';
   Amazon.hpModifier = 15;
-  Amazon.attackModifier = 25;
-  Amazon.setHP(150, 200);
-  Amazon.setDmg(60, 90);
+  Amazon.attackModifier = 15;
+  Amazon.dmgType = 'persistent listening';
+  Amazon.setHP(130, 180);
+  Amazon.setDmg(30, 80);
   return Amazon;
 };
 const makeApple = () => {
@@ -26,14 +28,16 @@ const makeApple = () => {
   Apple.model = 'Apple';
   Apple.hpModifier = 30;
   Apple.attackModifier = 10;
-  Apple.setHP(200, 300);
-  Apple.setDmg(45, 60);
+  Apple.dmgType = 'complete mind control';
+  Apple.setHP(180, 200);
+  Apple.setDmg(25, 60);
   return Apple;
 };
 
 const randomBoss = () => {
   const bossBuilderArray = [makeGoogle, makeAmazon, makeApple,];
-  return bossBuilderArray[Math.floor(Math.random() * bossBuilderArray.length)]();
+  const boss = bossBuilderArray[Math.floor(Math.random() * bossBuilderArray.length)]();
+  return boss;
 };
 
 module.exports = {
