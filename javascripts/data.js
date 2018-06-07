@@ -51,7 +51,7 @@ const newOpponent = (game) => {
 };
 const weaponDrop = (game) => {
   const mobDrops = game.player.opponent.drops;
-  const droppedWeapon = mobDrops[randomNum(mobDrops.length - 1)];
+  const droppedWeapon = mobDrops[randomNum(mobDrops.length)];
   weapons().then(weps => {
     const weaponDropped = weps.find(w => w.id === droppedWeapon);
     dom.drawWeaponDrop(game, weaponDropped);
