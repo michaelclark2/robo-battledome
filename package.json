@@ -1,0 +1,28 @@
+{
+  "name": "robo-battledome",
+  "version": "1.0.0",
+  "description": "Your smart home has become sentient and has turned your appliances against you!  Defeat all of your appliances in order to face off against the final boss!  All enemies are randomly generated.  Enemies have weapon drops and there is a heal function.",
+  "private": true,
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "npx webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelclark2/robo-battledome.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelclark2/robo-battledome/issues"
+  },
+  "homepage": "https://github.com/michaelclark2/robo-battledome#readme",
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
